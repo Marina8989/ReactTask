@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    border: 1px solid green;
+    width: 500px;
+    margin: auto;
+    padding: 2rem 1.5rem;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.addBtn{
+    background: green;
+    padding: .5rem .9rem;
+    border: none;
+    border-radius: 5px;
+}
