@@ -1,17 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Button from './Button';
 
-function Header() {
-    const [text, setText] = useState(true);
-
+const Header = () => {
     const onClick = () => {
-        console.log('click');
-        setText(!text);
+        console.log('clicked btn');
     }
     return (
-        <div className='header'>
+        <div className="header">
             <h2>Task Tracker</h2>
-            <Button value={text} onClick={onClick} />
+            <Button onClick={onClick} color={'green'}/>
         </div>
     )
 }
