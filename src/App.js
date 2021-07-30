@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
+import AddTask from './components/AddTask';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
     return (
         <div className='container'>
             <Header />
+            <AddTask />
             {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={onDelete} onToggle={onToggle}/>) : <h4 style={{ textAlign: 'center', paddingTop: '1rem'}}>{alertText}</h4>}
         </div>
     )
