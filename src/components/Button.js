@@ -1,7 +1,13 @@
 import React from 'react'
 
-function Button({color, onClick}) {
-    return <button style={{backgroundColor: color}} className="addBtn" onClick={onClick}>Add</button>
+const Button = ({color, onAdd }) => {
+
+   
+    
+    return (
+    <button style={{backgroundColor: color}} 
+      className="addBtn" onClick={onAdd}>Add</button>
+    )
 }
 
 export default Button

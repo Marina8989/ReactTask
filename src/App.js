@@ -5,6 +5,7 @@ import AddTask from './components/AddTask';
 
 
 function App() {
+    const [showTaskText, setShowTaskText] = useState(false)
     const [tasks, setTasks] = useState([
         {
             id: 1,
@@ -32,8 +33,7 @@ function App() {
         },
     ]);
     // add new task to list
-    const onAdd = (task) => {
-        console.log(task);
+    const addTask = (task) => {
       let id = Math.floor(Math.random() * 10000) + 1;
       let newTask = {id, ...task};
       console.log(newTask);
@@ -48,11 +48,13 @@ function App() {
        setTasks(tasks.map(task => task.id === id ? {...task, reminder : !task.reminder} : task))
     }
    
+
+    
     const alertText = 'No Tasks To Show';
     return (
         <div className='container'>
-            <Header />
-            <AddTask onAdd={onAdd}/>
+            <Header onAdd={() => setShowTaskText(!showTaskText)}/>
+            {showTaskText && <AddTask onAdd={addTask}/>}
             {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={onDelete} onToggle={onToggle}/>) : <h4 style={{ textAlign: 'center', paddingTop: '1rem'}}>{alertText}</h4>}
         </div>
     )
