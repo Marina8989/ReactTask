@@ -7,7 +7,6 @@ const AddTask = ({onAdd}) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log('yes clicked');
 
         if(!text) {
            alert('Please enter task');
@@ -15,7 +14,7 @@ const AddTask = ({onAdd}) => {
         }
         onAdd({text, day, reminder});
 
-
+        // reset everything after submitting on to the page
         setText('');
         setDay('');
         setReminder(false);
