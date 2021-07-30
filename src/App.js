@@ -26,10 +26,18 @@ function App() {
             day: '02.05.21'
         },
     ]);
+
+    const onDelete = (id) => {
+        setTasks(tasks.filter(task => task.id !== id))
+    }
+   
+    const alertText = 'No Tasks Left at the Moment';
     return (
         <div className='container'>
             <Header />
-            <Tasks tasks={tasks}/>
+            {
+                tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={onDelete}/>) : <h4 style={{color: 'red', textAlign: 'center', fontSize: '17px', paddingTop: '1rem'}}>{alertText}</h4>
+            }
         </div>
     )
 }
