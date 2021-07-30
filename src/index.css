@@ -34,3 +34,6 @@
 .taskPar{
     font-size: 14px;
 }
+.reminder{
+    border-left: 3px solid green;
+}
